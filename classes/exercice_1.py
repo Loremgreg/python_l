@@ -21,3 +21,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Créez une classe Book avec :
+
+# Attributs : title, author, pages
+# Méthode __str__ qui retourne : "Title by Author (X pages)"
+# Méthode is_long() qui retourne True si le livre a plus de 300 pages
