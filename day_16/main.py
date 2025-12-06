@@ -6,7 +6,7 @@ class Student:
         
     def get_grade(self):
         return self.grade
-        
+  
 #adding student to a course 
 class Course:
     def __init__(self, name, max_students):
