@@ -10,7 +10,7 @@ class ShoppingCart:
     # Remove an item with a specific name from the shopping cart
     def remove_item(self, item_name):
         for item in self.items:
-            if item == item_name:
+            if item[0] == item_name:
                 self.items.remove(item)
                 break
 
@@ -18,8 +18,7 @@ class ShoppingCart:
     def calculate_total(self):
         total = 0
         for item in self.items:
-            if qty:
-                total += 1
+            total += item[1]
         return total
 
 # Example usage
@@ -27,13 +26,23 @@ class ShoppingCart:
 cart = ShoppingCart()
 
 # Add items to the shopping cart
-add = cart.add_item("Apple", 2)
-print(cart.items)
-
+cart.add_item("Apple", 100)
+cart.add_item("Guava", 200)
+cart.add_item("Orange", 150)
 
 # Display the current items in the cart and calculate the total quantity
+print("Current Items in Cart:")
+for item in cart.items:
+    print(item[0], "-", item[1])
 
-
-
+tot_qty = cart.calculate_total()
+print("Total quantity: ", tot_qty)
 
 # Remove an item from the cart, display the updated items, and recalculate the total quantity
+del_ = cart.remove_item("Apple")
+print("Updated items in Cart after removing Apple:")
+for item in cart.items:
+    print(item[0], "-", item[1])
+
+tot_qty = cart.calculate_total()
+print("New quantity: ", tot_qty)
